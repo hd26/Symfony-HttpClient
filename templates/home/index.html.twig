@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Api{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+    <div class="row justify-content-center px-3">
+        <div class="card">
+            <h2 class="ml-auto mr-4 mt-3 mb-0">{{meteo.name}}</h2>
+            <p class="ml-auto mr-4 mb-0 med-font">{{meteo.weather.0.description}}</p>
+            <h1 class="ml-auto mr-4 large-font">{{meteo.main.temp|round(0, 'floor')}}&#176;C </h1>
+            <p class="time-font mb-0 ml-4 mt-auto"> {{"now"|date("H:m")}} <span class="sm-font"></span></p>
+            <p class="ml-4 mb-4">{{ "now"|date("d/m/Y")}}</p>
+        </div>
+    </div>
+
+    </div>
+    <div class="col">
+    <div class="card">
+            <h2 class="ml-auto mr-4 mt-3 mb-0">Bitcoin</h2>
+            <p class="ml-auto mr-4 mb-0 med-font">Bitcoin</p>
+            <h1 class="ml-auto mr-4 large-font">{{bitcoin.rate|round(0, 'floor')}} {{bitcoin.asset_id_quote}}</h1>
+            <p class="time-font mb-0 ml-4 mt-auto"> {{"now"|date("H:m")}} </p>
+            <p class="ml-4 mb-4">{{ "now"|date("d/m/Y")}}</p>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+{% block javascripts %}
+{% endblock %}
+
+{% endblock %}
+
